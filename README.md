@@ -12,4 +12,4 @@ Vision is done by using a Raspberry Pi camera module attached with an HDMI cable
 
 The camera is controlled via Python OpenCV running on the Raspberry Pi. The raw image is converted to a 480x480px image by warping the perspective so the chessboard squares are equal size and the non-chessboard part of the image is cropped.
 
-'Picture r1'
+![]images\r1.png
