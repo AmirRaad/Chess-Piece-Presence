@@ -64,6 +64,8 @@ matrix = cv.getPerspectiveTransform(pts1, pts2)
 result = cv.warpPerspective(im, matrix, (480, 480))
 ```
 And this will be the cropping result:
+
+
 ![](Images/r1.png)
 
 ### How to Determine if a Chessboard Square is Occupied or Empty
@@ -72,6 +74,8 @@ The answer may be obvious to us, but how can we write a program that can answer 
 Let us take every square in the chessboard and try to determine its color and see if it is occupied or not! So, I took the cropped image,  convert it to hsv color space and split it into its main three channels. Then, it is important to calculate the square size (or its hight and width)  
 
 After that, if we took the "h" image we notice that standard deviation of every pixel in square is equal or more than three if the square is occupied, otherwise it is less than three. So, I made an 8x8 array that simulates the chessboard and gave "1" value to occupied squares and "0" value to unoccupied ones.
+
+
 ![](Images/h.png)
 
 ```python
@@ -86,6 +90,8 @@ Now, we know the occupied squares. So, we can just check them to determine color
 Let us take the "red" image as a gray scale and we notice two situations depending on mean of every pixel in square:
 1. Black Squares. mean value: [0, 80]
 2. White Squares. mean value: [90, 160]
+
+
 ![](Images/r.png)
 
 * Red pieces have the values: [50, 80] in black & [130, 160] in white squares.
@@ -105,4 +111,6 @@ if chess_board[row][colomn] == 1 and 90 < mean_r < 160:  # White squares
 cv.putText(result, txt2, ((60 * colomn), (60 * row) + 25), 2, 1, (0, 255, 255))
 ```
 This will be the final result:
+
+
 ![](Images/final.png)
