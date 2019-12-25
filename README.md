@@ -39,6 +39,8 @@ index1 = []
 ```
 
 The previous algorithm caused a malfunction in the operation, because it finds the coordinates in a random way that I couldn't determine. So, this was solved by Sorting according to counterclockwise point coordinates like this:
+
+
           4---<----3
           |        |
           |        |
