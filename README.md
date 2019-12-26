@@ -75,7 +75,7 @@ The answer may be obvious to us, but how can we write a program that can answer 
 
 Let us take every square in the chessboard and try to determine its color and see if it is occupied or not! So, I took the cropped image,  convert it to hsv color space and split it into its main three channels. Then, it is important to calculate the square size (or its hight and width)  
 
-After that, if we took the "h" image we notice that standard deviation of every pixel in square is equal or more than three if the square is occupied, otherwise it is less than three. So, I made an 8x8 array that simulates the chessboard and gave "1" value to occupied squares and "0" value to unoccupied ones.
+After that, if we took the "h" image we notice that standard deviation of every pixel in square is equal or more than three if the square is occupied, otherwise it is not occupied. So, I made an 8x8 array that simulates the chessboard and gave "1" value to occupied squares and "0" value to unoccupied ones.
 
 
 ![](Images/h.png)
